@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Mdpedi Provider Suite
+ * Plugin Name: MDPA Practice Management
  * Plugin URI: https://github.com/render034/mdpedi-plugin
- * Description: Provider management and related functionality for MD Pediatric Associates
+ * Description: Comprehensive practice management including providers, locations, FAQs, notifications, and dynamic features for MD Pediatric Associates
  * Version: 1.0.0
  * Author: MD Pediatric Associates
  * License: GPL v2 or later
@@ -23,7 +23,7 @@ define('MDPEDI_PLUGIN_BASENAME', plugin_basename(__FILE__));
 /**
  * Main plugin class
  */
-class MdpediProviderSuite {
+class MDPAPracticeManagement {
 
     /**
      * Constructor
@@ -60,4 +60,4 @@ class MdpediProviderSuite {
 }
 
 // Initialize the plugin
-new MdpediProviderSuite();
+new MDPAPracticeManagement();
