@@ -1,0 +1,53 @@
+/**
+ * Main styles for HC Provider Management Plugin
+ */
+
+// Base styles - variables and mixins
+@use 'base/variables';
+@use 'base/mixins';
+
+// Core class styles
+@use 'core/locations';
+@use 'core/providers';
+@use 'core/banners';
+@use 'core/faqs';
+
+// Module styles
+@use 'modules/reviews';
+
+// Global plugin styles
+.hc-plugin {
+  font-family: var(--hc-font-family);
+  color: var(--hc-text-color);
+
+  // Common utility classes
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--hc-spacing-md);
+  }
+
+  &__section {
+    margin-bottom: var(--hc-spacing-xl);
+
+    &-title {
+      @include hc-title(var(--hc-font-size-xl));
+      text-align: center;
+      margin-bottom: var(--hc-spacing-lg);
+    }
+  }
+
+  &__loading {
+    text-align: center;
+    padding: var(--hc-spacing-xl);
+    color: var(--hc-text-light);
+  }
+
+  &__error {
+    @include hc-card();
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: var(--hc-accent-color);
+    text-align: center;
+  }
+}

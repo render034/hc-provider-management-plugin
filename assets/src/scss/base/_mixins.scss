@@ -1,0 +1,79 @@
+/**
+ * Mixins for HC Provider Management Plugin
+ */
+
+// Card mixin
+@mixin hc-card($padding: var(--hc-spacing-md)) {
+	border: 1px solid var(--hc-border-color);
+	border-radius: var(--hc-border-radius);
+	padding: $padding;
+	background: var(--hc-white);
+	box-shadow: var(--hc-shadow-sm);
+	margin-bottom: var(--hc-spacing-md);
+}
+
+// Button mixin
+@mixin hc-button($bg-color: var(--hc-primary-color), $text-color: var(--hc-white)) {
+	background: $bg-color;
+	color: $text-color;
+	border: none;
+	padding: var(--hc-spacing-sm) var(--hc-spacing-md);
+	border-radius: var(--hc-border-radius);
+	cursor: pointer;
+	font-family: var(--hc-font-family);
+	transition: all 0.2s ease;
+
+	&:hover {
+		opacity: 0.9;
+		transform: translateY(-1px);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+// Typography mixins
+@mixin hc-title($size: var(--hc-font-size-xl)) {
+	font-size: $size;
+	font-weight: 600;
+	color: var(--hc-primary-color);
+	margin-bottom: var(--hc-spacing-sm);
+}
+
+@mixin hc-text($size: var(--hc-font-size-base), $color: var(--hc-text-color)) {
+	font-size: $size;
+	color: $color;
+	line-height: var(--hc-line-height);
+}
+
+// Grid mixin
+@mixin hc-grid($columns: 1, $gap: var(--hc-spacing-md)) {
+	display: grid;
+	grid-template-columns: repeat($columns, 1fr);
+	gap: $gap;
+}
+
+// Responsive breakpoints
+@mixin breakpoint($bp, $rule: min-width) {
+	@if $bp == md {
+		@media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px), screen and (#{$rule}: map.get(breakpoints.$breakpoints, $bp)) {
+			@content;
+		}
+	} @else if $bp == lg {
+		@media only screen 
+        and (min-device-width : 1025px) and (#{$rule}: map.get(breakpoints.$breakpoints, $bp)) {
+			@content;
+		}
+	} @else if $bp == ipad {
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+			@content;
+		}
+	} @else {
+		@media screen and (#{$rule}: map.get(breakpoints.$breakpoints, $bp)) {
+			@content;
+		}
+	}
+}

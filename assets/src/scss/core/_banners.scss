@@ -1,0 +1,132 @@
+/**
+ * Styles for MDBanners (Notifications) class
+ */
+
+@use '../base/mixins' as *;
+
+.hc-banners {
+  &__container {
+    margin-bottom: var(--hc-spacing-lg);
+  }
+
+  &__notification {
+    padding: var(--hc-spacing-md);
+    border-radius: var(--hc-border-radius);
+    margin-bottom: var(--hc-spacing-md);
+    position: relative;
+    box-shadow: var(--hc-shadow-sm);
+
+    // Default (error/alert) style
+    background: var(--hc-accent-color);
+    color: var(--hc-white);
+
+    &--info {
+      background: var(--hc-info-color);
+    }
+
+    &--success {
+      background: var(--hc-success-color);
+    }
+
+    &--warning {
+      background: var(--hc-warning-color);
+    }
+
+    &--light {
+      background: var(--hc-background-light);
+      color: var(--hc-text-color);
+      border: 1px solid var(--hc-border-color);
+    }
+  }
+
+  &__content {
+    @include hc-text();
+    margin: 0;
+
+    p {
+      margin: 0 0 var(--hc-spacing-sm);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__title {
+    @include hc-title(var(--hc-font-size-lg));
+    color: inherit;
+    margin-bottom: var(--hc-spacing-sm);
+  }
+
+  &__close {
+    position: absolute;
+    top: var(--hc-spacing-sm);
+    right: var(--hc-spacing-sm);
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-size: var(--hc-font-size-lg);
+    line-height: 1;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    margin-right: var(--hc-spacing-sm);
+    font-size: var(--hc-font-size-lg);
+    vertical-align: middle;
+  }
+
+  // Sticky banner
+  &__sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  // Banner with slide animation
+  &__slide-in {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  &__slide-out {
+    animation: slideOut 0.3s ease-in;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}

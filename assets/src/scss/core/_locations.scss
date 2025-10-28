@@ -1,0 +1,73 @@
+/**
+ * Styles for MDLocations class
+ */
+
+@use '../base/mixins' as *;
+
+.hc-locations {
+  &__container {
+    @include hc-grid(1);
+
+    @include hc-tablet {
+      @include hc-grid(2);
+    }
+
+    @include hc-desktop {
+      @include hc-grid(3);
+    }
+  }
+
+  &__card {
+    @include hc-card();
+
+    &:hover {
+      box-shadow: var(--hc-shadow-md);
+      transform: translateY(-2px);
+      transition: all 0.2s ease;
+    }
+  }
+
+  &__title {
+    @include hc-title();
+  }
+
+  &__address {
+    @include hc-text(var(--hc-font-size-sm), var(--hc-text-light));
+    margin-bottom: var(--hc-spacing-sm);
+  }
+
+  &__phone {
+    @include hc-text(var(--hc-font-size-sm));
+    font-weight: 500;
+  }
+
+  &__hours {
+    margin-top: var(--hc-spacing-md);
+    padding-top: var(--hc-spacing-md);
+    border-top: 1px solid var(--hc-border-color);
+
+    &-title {
+      @include hc-text(var(--hc-font-size-sm));
+      font-weight: 600;
+      margin-bottom: var(--hc-spacing-xs);
+    }
+
+    &-item {
+      @include hc-text(var(--hc-font-size-sm), var(--hc-text-light));
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--hc-spacing-xs);
+
+      &--closed {
+        color: var(--hc-accent-color);
+      }
+    }
+  }
+
+  &__map {
+    margin-top: var(--hc-spacing-md);
+    height: 200px;
+    border-radius: var(--hc-border-radius);
+    overflow: hidden;
+  }
+}

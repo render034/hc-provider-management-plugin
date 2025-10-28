@@ -1,0 +1,65 @@
+/**
+ * Variables for HC Provider Management Plugin
+ */
+
+// Colors
+:root {
+	--hc-primary-color: #2c3e50;
+	--hc-secondary-color: #3498db;
+	--hc-accent-color: #e74c3c;
+	--hc-success-color: #27ae60;
+	--hc-warning-color: #f39c12;
+	--hc-info-color: #3498db;
+	--hc-text-color: #333;
+	--hc-text-light: #666;
+	--hc-border-color: #ddd;
+	--hc-background-light: #f8f9fa;
+	--hc-white: #ffffff;
+}
+
+// Spacing
+:root {
+	--hc-spacing-xs: 4px;
+	--hc-spacing-sm: 8px;
+	--hc-spacing-md: 16px;
+	--hc-spacing-lg: 24px;
+	--hc-spacing-xl: 32px;
+}
+
+// Typography
+:root {
+	--hc-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	--hc-font-size-sm: 0.875rem;
+	--hc-font-size-base: 1rem;
+	--hc-font-size-lg: 1.125rem;
+	--hc-font-size-xl: 1.25rem;
+	--hc-line-height: 1.6;
+}
+
+// Border radius
+:root {
+	--hc-border-radius: 4px;
+	--hc-border-radius-lg: 8px;
+}
+
+// Shadows
+:root {
+	--hc-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+	--hc-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--hc-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+$default-container-max-width: 1080px;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+	"sm": 544px,
+	"md": 768px,
+	"lg": 992px,
+	"xl": 1200px,
+	"xxl": 1600px,
+	"xxxl": 2000px,
+	"container": $default-container-max-width,
+) !default;

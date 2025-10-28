@@ -1,0 +1,195 @@
+/**
+ * Styles for MDReviews module
+ */
+
+@use '../base/mixins' as *;
+
+.hc-reviews {
+  &__container {
+    @include hc-grid(1);
+
+    @include hc-desktop {
+      @include hc-grid(2);
+    }
+  }
+
+  &__card {
+    @include hc-card();
+    position: relative;
+
+    &:hover {
+      box-shadow: var(--hc-shadow-md);
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--hc-spacing-sm);
+
+    &-stars {
+      display: flex;
+      margin-right: var(--hc-spacing-sm);
+
+      &-star {
+        color: #ffd700;
+        font-size: var(--hc-font-size-lg);
+
+        &--empty {
+          color: var(--hc-border-color);
+        }
+      }
+    }
+
+    &-score {
+      @include hc-text(var(--hc-font-size-sm), var(--hc-text-light));
+      font-weight: 500;
+    }
+  }
+
+  &__content {
+    @include hc-text();
+    margin-bottom: var(--hc-spacing-md);
+    font-style: italic;
+
+    &::before,
+    &::after {
+      content: '"';
+      color: var(--hc-secondary-color);
+      font-size: var(--hc-font-size-xl);
+      font-weight: bold;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    padding-top: var(--hc-spacing-md);
+    border-top: 1px solid var(--hc-border-color);
+
+    &-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: var(--hc-spacing-md);
+      background: var(--hc-secondary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--hc-white);
+      font-weight: 600;
+    }
+
+    &-info {
+      flex: 1;
+    }
+
+    &-name {
+      @include hc-text(var(--hc-font-size-base));
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    &-date {
+      @include hc-text(var(--hc-font-size-sm), var(--hc-text-light));
+    }
+  }
+
+  &__verified {
+    position: absolute;
+    top: var(--hc-spacing-md);
+    right: var(--hc-spacing-md);
+    background: var(--hc-success-color);
+    color: var(--hc-white);
+    padding: var(--hc-spacing-xs) var(--hc-spacing-sm);
+    border-radius: var(--hc-border-radius);
+    font-size: var(--hc-font-size-sm);
+    font-weight: 500;
+
+    &::before {
+      content: '✓';
+      margin-right: var(--hc-spacing-xs);
+    }
+  }
+
+  // Summary/Stats section
+  &__summary {
+    @include hc-card();
+    text-align: center;
+    margin-bottom: var(--hc-spacing-lg);
+
+    &-average {
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--hc-secondary-color);
+      margin-bottom: var(--hc-spacing-xs);
+    }
+
+    &-stars {
+      display: flex;
+      justify-content: center;
+      margin-bottom: var(--hc-spacing-sm);
+
+      &-star {
+        color: #ffd700;
+        font-size: var(--hc-font-size-xl);
+        margin: 0 2px;
+      }
+    }
+
+    &-count {
+      @include hc-text(var(--hc-font-size-sm), var(--hc-text-light));
+    }
+  }
+
+  // Filters
+  &__filters {
+    margin-bottom: var(--hc-spacing-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--hc-spacing-sm);
+    align-items: center;
+
+    &-label {
+      @include hc-text(var(--hc-font-size-sm));
+      font-weight: 600;
+    }
+
+    &-button {
+      @include hc-button(transparent, var(--hc-text-color));
+      border: 1px solid var(--hc-border-color);
+      font-size: var(--hc-font-size-sm);
+      padding: var(--hc-spacing-xs) var(--hc-spacing-md);
+
+      &--active {
+        @include hc-button(var(--hc-secondary-color), var(--hc-white));
+      }
+
+      &:hover {
+        border-color: var(--hc-secondary-color);
+      }
+    }
+  }
+
+  // Loading state
+  &__loading {
+    text-align: center;
+    padding: var(--hc-spacing-xl);
+    color: var(--hc-text-light);
+
+    &-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--hc-border-color);
+      border-top: 4px solid var(--hc-secondary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto var(--hc-spacing-md);
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

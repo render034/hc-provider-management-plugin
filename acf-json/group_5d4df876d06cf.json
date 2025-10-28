@@ -1,0 +1,109 @@
+{
+    "key": "group_5d4df876d06cf",
+    "title": "Reviews Fields",
+    "fields": [
+        {
+            "key": "field_5d4df8a837ac4",
+            "label": "Review Content",
+            "name": "review",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Enter the review without quotation marks and without the author",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "E.g. I love MD Pediatric Associates!",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5d4df8e037ac5",
+            "label": "Author of the Review",
+            "name": "review_author",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Leave blank if there is no author",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "John Smith",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5d4df92f37ac6",
+            "label": "Review Rating",
+            "name": "review_rating",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "5": "5",
+                "4": "4",
+                "3": "3",
+                "2": "2",
+                "1": "1"
+            },
+            "allow_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "value",
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "reviews"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1714770976
+}

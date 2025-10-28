@@ -1,0 +1,33 @@
+name: Test FTP Connection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-connection:
+    name: Test FTP Connection
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test FTP connection
+        run: |
+          echo "Testing FTP connection to 107.180.40.145..."
+
+          # Install lftp
+          sudo apt-get update
+          sudo apt-get install -y lftp
+
+          # Test connection and list directory
+          lftp -u "render034@mdpedi.com,${{ secrets.FTP_PASSWORD }}" -p 21 ftp://107.180.40.145 <<EOF
+          set ftp:ssl-allow no
+          ls /wp-content/plugins/
+          bye
+          EOF
+
+      - name: Connection successful
+        run: |
+          echo "✅ FTP connection successful!"
+          echo "Server: 107.180.40.145"
+          echo "Port: 21 (FTP)"
+          echo "Username: render034@mdpedi.com"
+          echo "Remote path: /wp-content/plugins/"
