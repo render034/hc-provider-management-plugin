@@ -1,4 +1,4 @@
-name: Deploy Theme
+name: Deploy Plugin
 
 on:
   workflow_dispatch:
@@ -42,7 +42,7 @@ jobs:
           username: render034@mdpedi.com
           password: ${{ secrets.FTP_PASSWORD }}
           #/home/rfkvew2zjpqj/public_html#
-          server-dir: /wp-content/themes/mdpedi-2025-theme/
+          server-dir: /wp-content/plugins/hc-provider-management-plugin/
           exclude: |
             **/.git*
             **/.git*/**
